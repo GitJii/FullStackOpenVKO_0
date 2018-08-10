@@ -1,0 +1,127 @@
+title Tehtävä 0.3: Käyttäjä navigoi muistiinpanojen sivulle
+
+kayttaja->selain:
+note left of selain
+kayttaja kirjoittaa osoiteriville
+fullstack-exampleapp.herokuapp.com/notes
+end note
+selain->palvelin: GET fullstack-exampleapp.herokuapp.com/notes
+note left of palvelin:
+Muodostuu HTML sivu, missä olemassa olevat
+muistiinpanot(/notes) ovat lueteltuna
+end note
+palvelin->selain: status 200, sivun HTML-koodi
+selain->palvelin: GET fullstack-exampleapp.herokuapp.com/notes.js
+note left of palvelin:
+palvelimelta haetaan js tiedosto
+end note
+palvelin->selain: status 200, js tiedosto haettu
+selain->palvelin: GET fullstack-exampleapp.herokuapp.com/notes.css
+note left of palvelin:
+palvelimelta haetaan css tiedosto
+end note
+palvelin->selain: status 200, css tiedosto haettu
+selain->palvelin: GET fullstack-exampleapp.herokuapp.com/data.json
+note left of palvelin:
+palvelimelta haetaan data.json tiedosto
+end note
+palvelin->selain: status 200, data.json tiedosto haettu
+note left of selain:
+Selain näyttää palvelimen palauttaman HTML sivun, joka
+on muodostettu käyttäen css tyylitiedostoja, js:ää ja json:ia hyödyntävä sivu
+end note
+
+TEHTÄVÄ 0.4.
+
+title Tehtävä 0.4: Käyttäjä luo uuden muistiinpanon ja tallettaa sen sivulla
+
+kayttaja->selain:
+note left of selain
+kayttaja kirjoittaa luo uuden muistiinpanon
+ja painaa talleta -painiketta
+end note
+selain->palvelin: POST fullstack-exampleapp.herokuapp.com/new_note
+note left of palvelin:
+Muodostuu HTML sivu, missä olemassa olevat
+muistiinpanot(/notes) ovat lueteltuna ja päivitettynä
+(lähetetty muistiinpano mukaan lukien)
+end note
+palvelin->selain: status 200, sivun HTML-koodi
+selain->palvelin: GET fullstack-exampleapp.herokuapp.com/notes.js
+note left of palvelin:
+palvelimelta haetaan js tiedosto
+end note
+palvelin->selain: status 200, js tiedosto haettu
+selain->palvelin: GET fullstack-exampleapp.herokuapp.com/notes.css
+note left of palvelin:
+palvelimelta haetaan css tiedosto
+end note
+palvelin->selain: status 200, css tiedosto haettu
+selain->palvelin: GET fullstack-exampleapp.herokuapp.com/data.json
+note left of palvelin:
+palvelimelta haetaan data.json tiedosto
+end note
+palvelin->selain: status 200, data.json tiedosto haettu
+note left of selain:
+Selain näyttää palvelimen palauttaman HTML sivun, joka
+on muodostettu käyttäen css tyylitiedostoja, js:ää ja json:ia hyödyntävä sivu
+end note
+
+TEHTÄVÄ 0.5.
+
+title 0.5. Käyttäjä navigoi muistiinpanosivun single page app versioon
+
+kayttaja->selain:
+note left of selain
+kayttaja kirjoittaa osoiteriville
+fullstack-exampleapp.herokuapp.com/spa
+end note
+selain->palvelin: GET fullstack-exampleapp.herokuapp.com/spa
+note left of palvelin:
+Muodostuu HTML sivu, missä olemassa olevat
+muistiinpanot(/notes) ovat lueteltuna
+end note
+palvelin->selain: status 200, sivun HTML-koodi
+selain->palvelin: GET fullstack-exampleapp.herokuapp.com/main.css
+note left of palvelin:
+palvelimelta haetaan css tyylitiedosto
+end note
+palvelin->selain: status 200, css tiedosto haettu
+selain->palvelin: GET fullstack-exampleapp.herokuapp.com/spa.js
+note left of palvelin:
+palvelimelta haetaan js tiedosto
+end note
+palvelin->selain: status 200, js tiedosto haettu
+selain->palvelin: GET fullstack-exampleapp.herokuapp.com/data.json
+note left of palvelin:
+palvelimelta haetaan data.json tiedosto
+end note
+palvelin->selain: status 200, data.json tiedosto haettu
+note left of selain:
+Selain näyttää palvelimen palauttaman HTML sivun, joka
+on muodostettu käyttäen css tyylitiedostoja, js:ää ja json:ia hyödyntävä sivu
+end note
+
+
+TEHTÄVÄ 0.6.
+
+title 0.6. Käyttäjä luo muistiinpanon muistiinpanosivun single page app versiossa
+
+kayttaja->selain:
+note left of selain
+kayttaja kirjoittaa muistiinpanokenttään haluamansa viestin osoitteessa
+fullstack-exampleapp.herokuapp.com/spa
+end note
+selain->palvelin: POST fullstack-exampleapp.herokuapp.com/new_note_spa
+note left of palvelin:
+Käyttäjän muistiinpano lähtee JSON muodossa ja
+sisältää sekä sisällön ja aikaleiman. Tärkeässä
+osassa on myös Content type, joka on application/json
+muotoa, jolloin palvelin pystyy hoitamaan parsimisen oikein.
+end note
+palvelin->selain: status 201(Created), sivun HTML-koodi
+
+note left of palvelin:
+Muodostuu HTML sivu, missä olemassa olevat
+muistiinpanot(/notes) ovat lueteltuna
+end note
